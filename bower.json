@@ -1,0 +1,16 @@
+{
+  "name": "ng-isotope",
+  "main": "ng-isotope.js isotope.pkgd.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/diego-vieira/ng-isotope",
+  "authors": [
+    "Diego Vieira <diego@protos.inf.br>"
+  ],
+  "description": "AngularJS directives for Isotope by Metafizzy",
+  "keywords": [
+    "isotope",
+    "ng-isotope",
+    "angular-isotope"
+  ],
+  "license": "GPL 3"
+}

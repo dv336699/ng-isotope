@@ -1,4 +1,12 @@
-'use strict';
+/**
+ * ng-isotope v0.0.1
+ * AngularJS directives for Isotope by Metafizzy
+ * http://isotope.metafizzy.co
+
+ * Copyright 2014 Diego Vieira <diego@protos.fin.br>
+ */
+ 
+ 'use strict';
 
 angular.module('ng-isotope', [])
     .directive('isotopeGrid', function ($timeout) {
