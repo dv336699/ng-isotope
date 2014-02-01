@@ -3,6 +3,7 @@
 angular.module('ng-isotope', [])
     .directive('isotopeGrid', function ($timeout) {
         return {
+            restrict: 'A',
             scope: {
                 items: '=isotopeGrid',
                 sortBy: '=isotopeSort',
@@ -26,9 +27,7 @@ angular.module('ng-isotope', [])
                 if (typeof attrs.isotopeSortEvent !== 'undefined') {
                     scope.$on(attrs.isotopeSortEvent, function (data, sort) {
                         // @todo search direction
-                        //options.sortBy = sort.sort || 'original-order';
                         options.sortBy = sort.sort || 'original-order';
-                        console.log(options);
                         element.isotope(options);
                     });
                 }
@@ -77,7 +76,7 @@ angular.module('ng-isotope', [])
         return {
             restrict: 'A',
             link: function (scope, element, attrs) {
-                // @todo type check var elementType = $(this).prev().prop('tagName');
+                // @todo make this more user friendly
                 var elm = angular.element(element);
                 var elementType = elm.prop('tagName');
                 if (elementType == 'DIV') {
@@ -92,7 +91,6 @@ angular.module('ng-isotope', [])
 
                             angular.element('body').find('*[isotope-filter-group=' + group + ']').each(function (i, e) {
                                 angular.element(e).find('*[isotope-filter-by]').each(function (i, e) {
-                                    //.attr('isotope-filter-by')
                                     if (angular.element(e).hasClass('active')) {
                                         var selectedFilter = angular.element(e).attr('isotope-filter-by');
                                         if (selectedFilter !== '*') {
