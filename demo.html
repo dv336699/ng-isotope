@@ -1,0 +1,278 @@
+<!doctype html>
+<html ng-app="isotopeDemo">
+<head>
+    <title>ng-isotope demo</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.1.0/css/bootstrap.css"/>
+    <link rel="stylesheet" href="demo.css"/>
+    <script src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/angularjs/1.2.10/angular.min.js"></script>
+    <script src="isotope.pkgd.js"></script>
+    <script src="ng-isotope.js"></script>
+    <script>
+        angular.module('isotopeDemo', ['ng-isotope']).
+        controller('isotopeDemoCtrl', function ($scope) {
+            var list = [
+                {
+                    name: 'Gold',
+                    symbol: 'Au',
+                    number: '79',
+                    weight: '196.966569',
+                    css: 'transition metal',
+                    category: 'transition'
+                },
+                {
+                    name: 'Antimony',
+                    symbol: 'Sb',
+                    number: '51',
+                    weight: '121.76',
+                    css: 'metalloid',
+                    category: 'metalloid'
+                },
+                {
+                    name: 'Mercury',
+                    symbol: 'Hg',
+                    number: '80',
+                    weight: '200.59',
+                    css: 'transition metal',
+                    category: 'transition'
+                },
+
+                {
+                    name: 'Tellurium',
+                    symbol: 'Te',
+                    number: '52',
+                    weight: '127.6',
+                    css: 'metalloid',
+                    category: 'metalloid'
+                },
+
+                {
+                    name: 'Bismuth',
+                    symbol: 'Bi',
+                    number: '83',
+                    weight: '208.980',
+                    css: 'post-transition metal',
+                    category: 'post-transition'
+                },
+
+                {
+                    name: 'Lead',
+                    symbol: 'Pb',
+                    number: '82',
+                    weight: '207.2',
+                    css: 'post-transition metal',
+                    category: 'post-transition'
+                },
+
+                {
+                    name: 'Gold',
+                    symbol: 'Au',
+                    number: '79',
+                    weight: '196.967',
+                    css: 'transition metal',
+                    category: 'transition'
+                },
+
+                {
+                    name: 'Potassium',
+                    symbol: 'K',
+                    number: '19',
+                    weight: '39.0983',
+                    css: 'alkali metal',
+                    category: 'alkali'
+                },
+
+                {
+                    name: 'Sodium',
+                    symbol: 'Na',
+                    number: '11',
+                    weight: '22.99',
+                    css: 'alkali metal',
+                    category: 'alkali'
+                },
+
+                {
+                    name: 'Cadmium',
+                    symbol: 'Cd',
+                    number: '48',
+                    weight: '112.411',
+                    css: 'transition metal',
+                    category: 'transition'
+                },
+
+                {
+                    name: 'Calcium',
+                    symbol: 'Ca',
+                    number: '20',
+                    weight: '40.078',
+                    css: 'alkaline-earth metal',
+                    category: 'alkaline-earth'
+                },
+
+                {
+                    name: 'Rhenium',
+                    symbol: 'Re',
+                    number: '75',
+                    weight: '186.207',
+                    css: 'transition metal',
+                    category: 'transition'
+                },
+
+                {
+                    name: 'Thallium',
+                    symbol: 'Tl',
+                    number: '81',
+                    weight: '204.383',
+                    css: 'post-transition metal',
+                    category: 'post-transition'
+                },
+
+                {
+                    name: 'Antimony',
+                    symbol: 'Sb',
+                    number: '51',
+                    weight: '121.76',
+                    css: 'metalloid',
+                    category: 'metalloid'
+                },
+
+                {
+                    name: 'Cobalt',
+                    symbol: 'Co',
+                    number: '27',
+                    weight: '58.933',
+                    css: 'transition metal',
+                    category: 'transition'
+                },
+
+                {
+                    name: 'Ytterbium',
+                    symbol: 'Yb',
+                    number: '70',
+                    weight: '173.054',
+                    css: 'lanthanoid metal inner-transition',
+                    category: 'lanthanoid'
+                },
+
+                {
+                    name: 'Argon',
+                    symbol: 'Ar',
+                    number: '18',
+                    weight: '39.948',
+                    css: 'noble-gas nonmetal',
+                    category: 'noble-gas'
+                },
+
+                {
+                    name: 'Nitrogen',
+                    symbol: 'N',
+                    number: '7',
+                    weight: '14.007',
+                    css: 'diatomic nonmetal',
+                    category: 'diatomic'
+                },
+
+                {
+                    name: 'Uranium',
+                    symbol: 'U',
+                    number: '92',
+                    weight: '238.029',
+                    css: 'actinoid metal inner-transition',
+                    category: 'actinoid'
+                },
+
+                {
+                    name: 'Plutonium',
+                    symbol: 'Pu',
+                    number: '94',
+                    weight: '(244)',
+                    css: 'actinoid metal inner-transition',
+                    category: 'actinoid'
+                }
+            ];
+
+            $scope.elementsList = angular.copy(list);
+
+            var types = [
+                'post-transition metal',
+                'transition metal',
+                'metalloid',
+                'alkali metal',
+                'alkaline-earth metal',
+                'lanthanoid metal inner-transition',
+                'noble-gas nonmetal'
+            ];
+
+            $scope.add = function() {
+                var css = types[Math.floor(Math.random()*types.length)];
+                var newelement = {
+                    name: Math.random().toString(36).substring(7),
+                    symbol: Math.random().toString(36).substring(16),
+                    number: '95',
+                    weight: (Math.random() * 10).toFixed(4),
+                    css: css,
+                    category: 'lanthanoid'
+                };
+                $scope.elementsList.push(newelement);
+            }
+
+            $scope.clear = function() {
+                $scope.elementsList = [];
+            }
+
+            $scope.reset = function() {
+                $scope.elementsList = angular.copy(list);
+            }
+        });
+    </script>
+</head>
+<body>
+<div class="container" ng-controller="isotopeDemoCtrl">
+<fieldset>
+    <legend>Sort</legend>
+
+    <div class="btn-group" isotope-sort isotope-sort-event="sort-elements">
+        <button isotope-sort-by="originalorder" class="btn btn-default active">original order</button>
+        <button isotope-sort-by="name" class="btn btn-default">name</button>
+        <button isotope-sort-by="symbol" class="btn btn-default">symbol</button>
+        <button isotope-sort-by="number" class="btn btn-default">number</button>
+        <button isotope-sort-by="weight" class="btn btn-default">weight</button>
+        <button isotope-sort-by="category" class="btn btn-default">category</button>
+    </div>
+</fieldset>
+<br />
+
+<fieldset>
+    <legend>Filter</legend>
+
+    <div class="btn-group" isotope-filter isotope-filter-event="filter-elements" isotope-filter-group="metals">
+        <button isotope-filter-by="*" class="btn btn-default active">show all</button>
+        <button isotope-filter-by=".metal" class="btn btn-default">metal</button>
+        <button isotope-filter-by=".transition" class="btn btn-default">transition</button>
+        <button isotope-filter-by=".alkali, .alkaline-earth" class="btn btn-default">alkali and alkaline-earth</button>
+        <button isotope-filter-by=":not(.transition)" class="btn btn-default">not transition</button>
+        <button isotope-filter-by=".metal:not(.transition)" class="btn btn-default">metal but not transition</button>
+    </div>
+</fieldset>
+
+<br />
+<div>
+    <button class="btn btn-primary" ng-click="add()">Add Item</button> <button class="btn btn-primary" ng-click="clear()">Clear List</button> <button class="btn btn-primary" ng-click="reset()">Reset List</button>
+</div>
+
+<br />
+<!-- attributes available: isotope-layout-mode="fitRows" isotope-item-selector="div" -->
+<div isotope-grid="elementsList" isotope-reload-event="reload-elements" isotope-sort-event="sort-elements"
+     isotope-filter-event="filter-elements"
+     isotope-sort-data="{ name: '.name', 'symbol': '.symbol', 'number': '.number parseInt', 'weight': '.weight parseFloat', 'category': '[data-category]'}">
+
+    <div class="element-item {{element.css}}" data-category="{{element.category}}" ng-repeat="element in elementsList">
+        <h3 class="name">{{element.name}}</h3>
+        <p class="symbol">{{element.symbol}}</p>
+        <p class="number">{{element.number}}</p>
+        <p class="weight">{{element.weight}}</p>
+    </div>
+</div>
+</div>
+</body>
+</html>
