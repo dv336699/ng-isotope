@@ -3,7 +3,7 @@
  * AngularJS directives for Isotope by Metafizzy
  * http://isotope.metafizzy.co
 
- * Copyright 2014 Diego Vieira <diego@protos.fin.br>
+ * Copyright 2014 Diego Vieira <diego@protos.inf.br>
  */
  
  'use strict';
