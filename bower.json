@@ -1,6 +1,6 @@
 {
   "name": "ng-isotope",
-  "main": "ng-isotope.js isotope.pkgd.js",
+  "main": ["ng-isotope.js", "isotope.pkgd.js"],
   "version": "0.0.1",
   "homepage": "https://github.com/diego-vieira/ng-isotope",
   "authors": [
