@@ -1,5 +1,5 @@
 /**
- * ng-isotope v0.0.1
+ * ng-isotope v0.0.2
  * AngularJS directives for Isotope by Metafizzy
  * http://isotope.metafizzy.co
 
