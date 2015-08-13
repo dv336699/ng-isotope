@@ -26,12 +26,6 @@ angular.module('ng-isotope', [])
 
                 element.isotope(options);
 
-                scope.$watch('items', function () {
-                    $timeout(function () {
-                        element.isotope('reloadItems').isotope(options);
-                    });
-                }, true);
-
                 if (typeof attrs.isotopeSortEvent !== 'undefined') {
                     scope.$on(attrs.isotopeSortEvent, function (data, sort) {
                         // @todo search direction
