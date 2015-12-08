@@ -18,3 +18,11 @@ Add to your head
 `ng-isotope.js`
 
 See demo.html for code samples
+
+# Settings 
+=========
+You can set a few options like so 
+```html
+ <div isotope-grid="elementsList" layout-mode="" item-selector="" isotope-reload-event="reload-elements" isotope-sort-event="sort-elements" isotope-filter-event="filter-elements">
+
+```
