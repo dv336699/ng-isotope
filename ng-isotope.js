@@ -9,7 +9,7 @@
  'use strict';
 
 angular.module('ng-isotope', [])
-    .directive('isotopeGrid', function ($timeout) {
+    .directive('isotopeGrid',[ '$timeout', function ($timeout) {
         return {
             restrict: 'A',
             scope: {
@@ -56,8 +56,8 @@ angular.module('ng-isotope', [])
                 }
             }
         };
-    })
-    .directive('isotopeSortBy', function () {
+    }])
+    .directive('isotopeSortBy',[ function () {
         return {
             restrict: 'A',
             link: function (scope, element, attrs) {
@@ -73,8 +73,8 @@ angular.module('ng-isotope', [])
                 });
             }
         };
-    })
-    .directive('isotopeFilter', function ($timeout) {
+    }])
+    .directive('isotopeFilter',['$timeout', function ($timeout) {
         return {
             restrict: 'A',
             link: function (scope, element, attrs) {
@@ -139,4 +139,4 @@ angular.module('ng-isotope', [])
                 }
             }
         };
-    });
+    }]);
