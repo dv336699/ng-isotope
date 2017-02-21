@@ -1,0 +1,19 @@
+{
+  "name": "ng-isotope",
+  "version": "1.0.0",
+  "description": "ng-isotope ==========",
+  "main": "ng-isotope.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrackMaven/ng-isotope.git"
+  },
+  "author": "Diego Vieira",
+  "license": "GNUv3",
+  "bugs": {
+    "url": "https://github.com/TrackMaven/ng-isotope/issues"
+  },
+  "homepage": "https://github.com/TrackMaven/ng-isotope#readme"
+}
